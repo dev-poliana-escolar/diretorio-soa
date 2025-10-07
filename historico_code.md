@@ -4,3 +4,13 @@
     2  mkdir -p calendario/2025/{01..12}/{01..31}
     3  touch calendario/2025/{01..12}/{01..31}/index.md
     4  history > historico_code.md
+
+# Aula 07/10
+
+## Gerenciamento de pacotes Debian
+```bash
+dpkg 
+apt 
+aptitude
+synaptic
+```
