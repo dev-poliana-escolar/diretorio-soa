@@ -23,7 +23,7 @@ Usamos o disco inteiro **LVM** de 21GB.
 ### Anotações gerais
 `jurandy.net` para acessar os arquivos de aula
 
-![manual do adm/Debian]("https://www.debian.org/doc/manuals/debian-handbook/index.pt-br.html")
+[manual do adm/Debian](https://www.debian.org/doc/manuals/debian-handbook/index.pt-br.html)
 
 - Pacotes recomendados pelo professor: etckeeper; git; openssh-server; curl; wcurl; mariadb-server
 
