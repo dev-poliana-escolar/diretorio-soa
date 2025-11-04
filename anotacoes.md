@@ -27,7 +27,7 @@
    15  usermod -aG pinheiro maria.pinheiro
 
    // criando os usuarios
-   16  adduser maria.pinheiro
+   16  useradd maria.pinheiro
 
    // add os usuarios nos grupos
    17  useradd maria.pinheiro
