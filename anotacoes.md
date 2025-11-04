@@ -64,3 +64,45 @@
    44  ip -br -4 a
 ```
 
+
+# Aula 04/05
+
+```bash
+
+getent passwd # lista usuário
+getent group # lista grupos
+
+
+# Propriedades
+# Mudar a propriedade de um diretório e seu conteúdo recursivamente:
+chown -v -R elisangela.pinheiro:pinheiro /srv/verde // sudo chown {opção} {usuario}:{grupo} {diretorio}
+
+groupdel {grupo}
+
+usermod -c "Maria Paula de Paiva Dias" paula.paiva 
+
+```
+
+Modo Octal (Numérico)
+Cada permissão tem um valor numérico: r=4, w=2, x=1. A soma dos valores determina o nível de permissão para cada categoria (proprietário, grupo, outros). 
+
+7 (rwx): Leitura, escrita e execução (4+2+1)
+6 (rw-): Leitura e escrita (4+2)
+5 (r-x): Leitura e execução (4+1)
+4 (r--): Apenas leitura (4)
+0 (---): Nenhuma permissão 
+
+
+---
+> pesquisar sobre osquery
+
+
+
+
+
+
+
+
+
+
+
