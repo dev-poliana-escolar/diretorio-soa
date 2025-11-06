@@ -64,6 +64,8 @@
    44  ip -br -4 a
 ```
 
+chown e chgrp aceitam a opção -R
+
 
 # Aula 04/05
 
@@ -95,6 +97,21 @@ Cada permissão tem um valor numérico: r=4, w=2, x=1. A soma dos valores determ
 
 ---
 > pesquisar sobre osquery
+
+# Aula 06/11
+
+
+```bash
+// mudar o que pertence ao grupo
+sudo chgrp {grupo} {arquivo  ou diretorio}
+
+ls -ld {caminho}
+
+
+```
+Para entrar em um diretorio, é preciso ter permisão de execução
+
+SHEBANG: é a primeira linha que indica qual vai ser o interpretador
 
 
 
