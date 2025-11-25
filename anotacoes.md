@@ -113,9 +113,34 @@ Para entrar em um diretorio, é preciso ter permisão de execução
 
 SHEBANG: é a primeira linha que indica qual vai ser o interpretador
 
+--- 
 
+# Aula 25/11
 
+1. Criar partições
+2. Formatar partições
+4. Montar e desmontar partições
 
+- Buscar discos: `lsblk | grep disk` ou para entrar -> `fdisk -l /dev/<nome_disco>`
+- Para editar: `fdisk /dev/<nome_disco>`
+- Fazer uma fundação/formatar: `mkfs` escolhe um tipo...
+    - Exemplo: `mkfs.ext4 /dev/<nome_particao>`      
+- Montar: `mount <particao> <diretorio>`
+- Montagem permanente: `<nome_editor> /etc/fstab`
+   
+## Comandos fsdisk
+m: ajuda
+p: exibir partições
+n: criar nova partição
+t: alterar o tipo da partição
+q: sair sem salvar
+w: sair e salvar 
+
+## Partições
+
+1. Primaria
+2. Extendida
+   
 
 
 
