@@ -140,7 +140,21 @@ w: sair e salvar
 
 1. Primaria
 2. Extendida
-   
+
+# Aula 11/12
+
+## Processos
+```bash
+~ # pstree -p
+init(1)-+-crond(627)
+        |-getty(634)
+        |-syslogd(337)
+        `-udhcpc(431)
+```
+### Conceitos
+BIOS -> Boot Manager -> Kernel -> init(1)
+
+1. O processo cron (crond) no Linux é um daemon (serviço de sistema) usado para agendar a execução automática de comandos ou scripts em datas e horários específicos. Ele funciona como um gerenciador de tarefas que opera em segundo plano, permitindo a automação de rotinas repetitivas sem intervenção manual. 
 
 
 
