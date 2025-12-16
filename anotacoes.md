@@ -154,7 +154,19 @@ init(1)-+-crond(627)
 ### Conceitos
 BIOS -> Boot Manager -> Kernel -> init(1)
 
-1. O processo cron (crond) no Linux é um daemon (serviço de sistema) usado para agendar a execução automática de comandos ou scripts em datas e horários específicos. Ele funciona como um gerenciador de tarefas que opera em segundo plano, permitindo a automação de rotinas repetitivas sem intervenção manual. 
+1. O processo cron (crond) no Linux é um daemon (serviço de sistema) usado para agendar a execução automática de comandos ou scripts em datas e horários específicos. Ele funciona como um gerenciador de tarefas que opera em segundo plano, permitindo a automação de rotinas repetitivas sem intervenção manual.
+2. 
+
+---
+
+# Aula 16/12
+- Servidor Gitea para produção com Alpine.
+
+- Diretorio /etc/ guarda arquivos de texto.
+
+
+
+
 
 
 
