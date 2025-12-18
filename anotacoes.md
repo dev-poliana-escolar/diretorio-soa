@@ -160,17 +160,61 @@ BIOS -> Boot Manager -> Kernel -> init(1)
 ---
 
 # Aula 16/12
-- Servidor Gitea para produção com Alpine.
 
-- Diretorio /etc/ guarda arquivos de texto.
+- Fazer conexão ssh:
+```bash
+   6 apk add iproute2
+   7 setup-apkrepos -c
+   8 apk add iproute2
+   9 apk add openssh
+  10 service sshd start
+  11 rc-update sshd
+  12 rc-update add sshd
+  13 apk add zsh
+  14 ss -tl
+  15 ip -br -c -4 address
+  16 apk add gitea etckeeper
+```
+- Ativar o espelhamento da comunidade e iniciar o gitea:
+```bash
+echo 36 | setup-apkrepos -c # ja adiciona ao setup-apkrepos o espelho 36
 
+service gitea start
+rc-update add gitea
+```
+- Instalação do mariadb
+```bash
+  18 apk add mariadb mariadb-client
+  19 mariadb-install-db --user=mysql --datadir=/var/lib/mysql
+  20 service mariadb start
+  21 rc-update add mariadb
+  22 mariadb-secure-installation
 
+```
+- Configurar o maria db e iniciar o gitea:
+```bash
+  32 mariadb -u root -p
 
+  33 micro /etc/gitea/app.ini
+  34 micro /etc/my.cnf.d/mariadb-server.cnf
 
-
-
-
-
-
-
+  35 service mariadb restart
+  36 ss -tnl
+  37 service gitea start
+  38 rc-update add gitea
+  39 service gitea stop
+  40 service gitea start
+```
+```bash
+  42 apk add caddy43 micro /etc/caddy/Caddyfile 
+  44 ss -tnl
+  45 rc-service caddy start
+  46 ss -tnl
+  47 micro /etc/gitea/app.ini 
+  48 rc-service caddy restart
+  49 micro /etc/gitea/app.ini 
+  50 rc-service caddy restart
+  51 micro /etc/gitea/app.ini 
+  5  52 rc-service caddy restart
+```
 
