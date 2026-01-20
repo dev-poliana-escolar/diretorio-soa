@@ -217,4 +217,7 @@ rc-update add gitea
   51 micro /etc/gitea/app.ini 
   5  52 rc-service caddy restart
 ```
+# Aula 20/01
+Instalar o microsocks
+
 
