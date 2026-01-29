@@ -221,3 +221,29 @@ rc-update add gitea
 Instalar o microsocks
 
 
+# Aula 29/01
+Utilizamos a biblioteca typer e SHEBANG
+
+```bash
+   46 mkdir teste
+   47  cd teste
+   48  uv init
+   49  uv add typer
+   50  ./main.py
+   51  chmod +x main.py
+   52  ./main.py
+
+```
+exemplo: 
+```py
+#! /usr/bin/env python3
+
+def main():
+    print("Hello from teste!")
+
+
+if __name__ == "__main__":
+    main()
+```
+
+
