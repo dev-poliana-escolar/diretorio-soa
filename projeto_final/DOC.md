@@ -9,7 +9,7 @@ Por fim, definir o endereço de IP, _gateway_ e servidor DNS de acordo com a pla
 
 1. [Configurar IP fixo com apenas um adaptador no modo _brigde_](#configurar-ip-fixo-com-apenas-um-adaptador-no-modo-brigde)
 2. [Segmentação de Rede: Acesso Externo (NAT) e Rede de Avaliação (Host-Only)](#segmentação-de-rede-acesso-externo-nat-e-rede-de-avaliação-host-only)
-
+3. [Entendendo Shell Script e CGI](#entendendo-shell-script-e-cgi)
 ## Configurar IP fixo com apenas um adaptador no modo _brigde_
 
 1. Para instalação da maquína em ambiente doméstico, foi necessário usar a rede em modo **NAT**
@@ -104,6 +104,34 @@ Ao utilizar esse método, ao instalar o Debian, deve-se configurar a rede. Serã
         > Reinicie a máquina com o comando `reboot`.
 
 Por fim, verifique com o comando `ping` o novo IP em enp0s8, e faça a conexão ssh.
+
+---
+
+# Entendendo Shell Script e CGI
+
+Na pasta `/usr/lib/cgi-bin/`, crie um arquivo `.sh`.
+
+- Regras básicas: \
+```nano
+#!/bin/bash 
+echo "Content-type: text/html; charset=UTF-8"
+echo ""
+
+NOME=$(echo "$QUERY_STRING" | cut -d'&' -f1 | cut -d'=' -f2)
+```
+
+1. Declare o SHEBANG e o cabeçalho que informa uma página web para o Apache2.
+2. Para declarar variáveis de URL (QUERY_STRING), utilize `$`.
+    - Existe dois métodos para a lógica de busca:
+        1. `NOME =$(echo "$QUERY_STRING" | sed -n 's/^.*nome=\([^&]*\).*$/\1/p' | sed 's/+/ /g')`
+        > Utilizar comando `sed`para realizar a busca por meio de carácteres. 
+        - `-n`:  não imprimir;
+        -  `'s/^.*nome=\([^&]*\) `: substituir (s); inicio da linhsa (^); por qualquer caractere (.* ); até encontrar texto (nome=); Salve e guarde o que for encontrado sem o caractere & (**( [^ &  ]* \ )**).
+        - `.*$/\1/p'`: Ignore o resto da linha e "imprima" o valor encontrado 
+        - `'s/+/ /g'`: Se for digitado espaço isso irá acontecer (Exemplo: Poliana+Pinheiro)
+
+        2. `NOME=$(echo "$QUERY_STRING" | cut -d'&' -f1 | cut -d'=' -f2)`
+
 
 
 
